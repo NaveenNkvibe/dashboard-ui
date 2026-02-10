@@ -1,7 +1,7 @@
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-import { expensesData } from "../../data/expensesData";
+import { expensesData } from "../../data/expensesData"; // Data for the chart values
 
-const COLORS = ["#D07A16", "#E0E0E0"];
+const COLORS = ["#D07A16", "#E0E0E0"]; // Pie Chart value colors
 
 const ExpensesChart = () => {
   return (

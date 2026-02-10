@@ -11,4 +11,4 @@ export const summaryChartData = [
   { month: "OCT", value: 330 },
   { month: "NOV", value: 560 },
   { month: "DEC", value: 280 },
-];
+]; // Datas listing Summary chart data

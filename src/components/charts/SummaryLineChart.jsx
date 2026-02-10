@@ -8,7 +8,7 @@ import {
   CartesianGrid,
 } from "recharts";
 
-import { summaryChartData } from "../../data/summaryChartData";
+import { summaryChartData } from "../../data/summaryChartData"; // Data for the chart values
 
 const SummaryLineChart = () => {
   return (

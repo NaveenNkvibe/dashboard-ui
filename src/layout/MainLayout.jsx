@@ -4,7 +4,7 @@ import Sidebar from '../components/sidebar/Sidebar';
 import Navbar from '../components/navbar/Navbar';
 
 const MainLayout = () => {
-	const [isOpen, setIsOpen] = useState(true);
+	const [isOpen, setIsOpen] = useState(true); // Boolean values to toggle sidebar open/close state
 
 	return (
 		<div className="flex">

@@ -38,4 +38,4 @@ export const router = createBrowserRouter([
 			},
 		],
 	},
-]);
+]); // Routes link and corresponding components listed

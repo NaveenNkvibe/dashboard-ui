@@ -24,4 +24,4 @@ export const topRevenueData = [
 		value: 10,
 		color: '#EBEBFF',
 	},
-];
+]; // Datas listing Top Revenue chart data

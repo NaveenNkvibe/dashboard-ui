@@ -5,7 +5,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { topRevenueData } from "../../data/topRevenueData";
+import { topRevenueData } from "../../data/topRevenueData"; // Data for the chart values
 
 const TopRevenueChart = () => {
   return (

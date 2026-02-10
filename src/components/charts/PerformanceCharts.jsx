@@ -8,7 +8,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { performanceOverviewData } from "../../data/performanceChartData";
+import { performanceOverviewData } from "../../data/performanceChartData"; // Data for the chart values
 
 const PerformanceOverview = () => {
   return (

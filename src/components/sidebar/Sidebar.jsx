@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const Sidebar = ({ isOpen, toggle }) => {
 
-	const [isMenuOpen, setIsMenuOpen] =useState(false)
+	const [isMenuOpen, setIsMenuOpen] =useState(false) // Boolean values to toggle sub menu open/close state
 
 	return (
 		<aside className={`fixed top-0 left-0 z-50 bg-[#E7E7E7] h-screen transition-all duration-300 shadow-[4px_0px_16px_0px_#0000000D] ${isOpen ? 'w-64' : 'w-16'}`}>

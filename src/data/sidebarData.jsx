@@ -30,4 +30,4 @@ export const sidebarData = [
 		icon: 'ri-video-on-line',
 		link: '/meetings',
 	},
-];
+]; // Datas listing sidebar menu details

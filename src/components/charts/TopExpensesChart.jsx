@@ -1,5 +1,5 @@
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-import { topExpensesData, totalExpenses } from "../../data/topExpensesData";
+import { topExpensesData, totalExpenses } from "../../data/topExpensesData"; // Data for the chart values
 
 const TopExpensesChart = () => {
   return (

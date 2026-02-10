@@ -19,7 +19,7 @@ export const dashboardCards = [
     title: "Account Receivable / Payable",
     icon: "ri-bank-card-line",
   },
-];
+]; // Datas listing dashboard cards
 
 export const dashboardWidgets = [
   {
@@ -43,4 +43,4 @@ export const dashboardWidgets = [
     icon: "ri-money-dollar-circle-line",
     chart: "chart",
   },
-];
+]; // Datas listing dashboard widgets

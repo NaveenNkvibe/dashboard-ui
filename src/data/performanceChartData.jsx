@@ -11,4 +11,4 @@ export const performanceOverviewData = [
   { month: "OCT", revenue: 140, expenses: 122, profit: 58 },
   { month: "NOV", revenue: 195, expenses: 168, profit: 80 },
   { month: "DEC", revenue: 75, expenses: 65, profit: 30 },
-];
+]; // Datas listing Performance chart data

@@ -6,11 +6,13 @@ import VendorDetails from '../pages/vendor/vendor-details/VendorDetails';
 import Meetings from '../pages/meetings/Meetings';
 import RequestedDocuments from '../pages/requested-documents/RequestedDocuments';
 import TaskUploads from '../pages/task-uploads/TaskUploads';
+import NotFound from '../pages/not-found/NotFound.jsx';
 
 export const router = createBrowserRouter([
 	{
 		path: '/',
 		element: <MainLayout />,
+		// errorElement: <NotFound />,
 		children: [
 			{
 				index: true,
@@ -35,6 +37,10 @@ export const router = createBrowserRouter([
 			{
 				path: 'meetings',
 				element: <Meetings />,
+			},
+			{
+				path: '*',
+				element: <NotFound />,
 			},
 		],
 	},

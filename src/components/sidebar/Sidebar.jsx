@@ -1,10 +1,65 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { sidebarData } from '../../data/sidebarData';
 import { useState } from 'react';
 
 const Sidebar = ({ isOpen, toggle }) => {
 
-	const [isMenuOpen, setIsMenuOpen] =useState(false) // Boolean values to toggle sub menu open/close state
+	const location = useLocation();// get current url
+	const [openMenus, setOpenMenus] = useState({}) // Boolean for menu/submenu toggle state
+
+	const handleToggle = (name) => {
+		setOpenMenus((prev) => ({
+			...prev,
+			[name]: !prev[name],
+		}));
+	}; // Update openMenu data
+
+	const isChildActive = (children) => {
+		return children?.some((child) => {
+			if (child.children) {
+				return isChildActive(child.children);
+			}
+			return location.pathname === child.link;
+		});
+	}; // Checks if menu contain the current active route
+
+	const renderMenuItems = (items, level = 0) => {
+		return items.map((item) => {
+			const hasChildren = item.children && item.children.length > 0;
+			const isActive = location.pathname === item.link;
+			const childActive = isChildActive(item.children);
+			const isExpanded = openMenus[item.name];
+
+			const baseClasses = `flex items-center justify-between p-2 rounded transition-all duration-200
+		${isActive || childActive ? 'bg-[linear-gradient(90deg,#444F8A_0%,#505FAA_100%)] text-white' : 'text-[#2D2D2D] hover:bg-[#d5d6d8]'}`;
+
+			return (
+				<div key={item.name}>
+					<NavLink
+						to={item.link || '#'}
+						className={baseClasses}
+						style={{ paddingLeft: `${level * 16 + 16}px` }}
+						onClick={(e) => {
+							if (hasChildren) {
+								e.preventDefault();
+								handleToggle(item.name);
+							}
+						}}
+					>
+						<div className="flex items-center gap-2">
+							{item.icon && level === 0 && <i className={`${item.icon} text-lg`} />}
+							{isOpen && <span className="text-sm">{item.name}</span>}
+						</div>
+
+						{hasChildren && isOpen && <i className={`ri-arrow-down-s-line transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />}
+					</NavLink>
+
+					{hasChildren && isExpanded && isOpen && <div className="mt-1 space-y-1">{renderMenuItems(item.children, level + 1)}</div>}
+				</div>
+			);
+		});
+	};
+
 
 	return (
 		<aside className={`fixed top-0 left-0 z-50 bg-[#E7E7E7] h-screen transition-all duration-300 shadow-[4px_0px_16px_0px_#0000000D] ${isOpen ? 'w-64' : 'w-16'}`}>
@@ -17,27 +72,7 @@ const Sidebar = ({ isOpen, toggle }) => {
 
 			<div className="flex flex-col h-full justify-start gap-10">
 				<section className="px-4 space-y-2">
-					{sidebarData.map((item) => (
-						<div key={item.name}>
-							<NavLink to={item.link || '#'} className={({ isActive }) => `flex items-center justify-between gap-3 p-2 rounded transition-colors duration-200 ${isActive ? 'bg-[linear-gradient(90deg,#444F8A_0%,#505FAA_100%)] text-white' : 'bg-transparent text-[#2D2D2D] hover:bg-[#d5d6d8] hover:text-white'}`}>
-								<div className="flex justify-start items-center gap-2">
-									<i className={`${item.icon} text-lg`} />
-									{isOpen && <span className="text-sm">{`${item.name}`}</span>}
-								</div>
-								{item.submenu && isOpen && <i className="ri-arrow-down-s-line transition-transform duration-200" />}
-							</NavLink>
-
-							{item.submenu && isOpen && isMenuOpen && (
-								<div className="ml-8 mt-1 space-y-1">
-									{item.submenu.map((sub) => (
-										<NavLink key={sub.name} to={sub.link} className={({ isActive }) => `block p-2 text-sm rounded hover:bg-[#444F8A] ${isActive ? 'bg-[linear-gradient(90deg,#444F8A_0%,#505FAA_100%)] text-white' : 'bg-transparent text-[#2D2D2D] hover:bg-[#d5d6d8] hover:text-white'}`}>
-											{sub.name}
-										</NavLink>
-									))}
-								</div>
-							)}
-						</div>
-					))}
+					{renderMenuItems(sidebarData)}
 				</section>
 				{isOpen && (
 					<div className="flex flex-col gap-2 mt-3 mx-4">

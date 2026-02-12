@@ -7,6 +7,7 @@ import Meetings from '../pages/meetings/Meetings';
 import RequestedDocuments from '../pages/requested-documents/RequestedDocuments';
 import TaskUploads from '../pages/task-uploads/TaskUploads';
 import NotFound from '../pages/not-found/NotFound.jsx';
+import VendorMonthlyReports from '../pages/vendor/vendor-reports/VendorMonthlyReports.jsx';
 
 export const router = createBrowserRouter([
 	{
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
 			{
 				path: 'vendor/details',
 				element: <VendorDetails />,
+			},
+			{
+				path: '/vendor/reports/monthly',
+				element: <VendorMonthlyReports />,
 			},
 			{
 				path: 'task-uploads',

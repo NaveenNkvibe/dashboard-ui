@@ -8,10 +8,20 @@ export const sidebarData = [
 		name: 'Vendor',
 		icon: 'ri-user-3-line',
 		link: '/vendor',
-		submenu: [
+		children: [
 			{
 				name: 'Vendor Details',
 				link: '/vendor/details',
+			},
+			{
+				name: 'Vendor Reports',
+				link: '/vendor/reports',
+				children: [
+					{
+						name: 'Monthly Reports',
+						link: '/vendor/reports/monthly',
+					},
+				],
 			},
 		],
 	},

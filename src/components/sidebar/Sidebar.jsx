@@ -38,7 +38,7 @@ const Sidebar = ({ isOpen, toggle }) => {
 					<NavLink
 						to={item.link || '#'}
 						className={baseClasses}
-						style={{ paddingLeft: `${level * 16 + 16}px` }}
+						style={{ paddingLeft: `${level === 0 ? '8px' : level * 16 + 16}px` }}
 						onClick={(e) => {
 							if (hasChildren) {
 								e.preventDefault();

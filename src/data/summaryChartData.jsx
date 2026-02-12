@@ -12,3 +12,6 @@ export const summaryChartData = [
   { month: "NOV", value: 560 },
   { month: "DEC", value: 280 },
 ]; // Datas listing Summary chart data
+
+export const totalSpend = 4652.42; // Top Spend value
+export const increasePercentage = 20; // Increase Percentage value

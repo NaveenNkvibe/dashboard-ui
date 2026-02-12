@@ -8,21 +8,21 @@ import {
   CartesianGrid,
 } from "recharts";
 
-import { summaryChartData } from "../../data/summaryChartData"; // Data for the chart values
+import { summaryChartData, totalSpend, increasePercentage } from "../../data/summaryChartData"; // Data for the chart values
 
 const SummaryLineChart = () => {
   return (
-		<div className="flex w-full gap-10">
+		<div className="flex w-full gap-10 md:flex-nowrap flex-wrap">
 			<div className="min-w-[220px] flex flex-col justify-between items-start">
 				<h3 className="text-xl font-semibold text-[#2D2D2D] mb-6">Summary</h3>
 
 				<div>
 					<p className="text-base text-[#2D2D2D] mb-2">Total Spend</p>
 
-					<p className="text-5xl font-semibold text-[#232323] mb-4">$4,652.42</p>
+					<p className="lg:text-5xl md:text-2xl text-xl font-semibold text-[#232323] mb-4">${totalSpend.toLocaleString()}</p>
 
 					<span className="inline-flex items-center gap-1 bg-[#15BF64] text-white text-sm px-3 py-1 rounded-full mb-3">
-						Increased By 20%
+						{`Increased By ${increasePercentage}%`}
 						<span>
 							<i class="ri-arrow-right-up-long-line"></i>
 						</span>
@@ -32,7 +32,7 @@ const SummaryLineChart = () => {
 				</div>
 			</div>
 
-			<div className="w-px bg-gray-200"></div>
+			<div className="hidden md:block w-px bg-gray-200"></div>
 
 			<div className="flex-1">
 				<div className="flex justify-end mb-4">

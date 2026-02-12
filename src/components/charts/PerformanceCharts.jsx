@@ -16,22 +16,22 @@ const PerformanceOverview = () => {
 			<div className="mb-6">
 				<h3 className="text-xl font-semibold text-[#2D2D2D] mb-4">Performance Overview</h3>
 
-				<div className="flex items-center gap-6 text-sm text-[#2D2D2D] mb-4">
+				<div className="flex items-center gap-6 text-sm text-[#2D2D2D] mb-4 flex-wrap">
 					<span className="flex items-center gap-2">
 						<span className="w-3 h-3 rounded-full bg-[#15BF64]" />
 						Total Revenue
+						<span className="ml-3 w-0.5 h-4 bg-[#D9D9D9]"/>
 					</span>
-					<div className="w-0.5 h-4 bg-[#D9D9D9]"></div>
 					<span className="flex items-center gap-2">
 						<span className="w-3 h-3 rounded-full bg-[#E87C6F]" />
 						Total Expenses
+						<span className="ml-3 w-0.5 h-4 bg-[#D9D9D9]"/>
 					</span>
-					<div className="w-0.5 h-4 bg-[#D9D9D9]"></div>
 					<span className="flex items-center gap-2">
 						<span className="w-3 h-3 rounded-full bg-[#333663]" />
 						Profit
+						<span className="ml-3 w-0.5 h-4 bg-[#D9D9D9]"/>
 					</span>
-					<div className="w-0.5 h-4 bg-[#D9D9D9]"></div>
 					<span className="underline cursor-pointer">All</span>
 				</div>
 			</div>

@@ -22,7 +22,7 @@ const Sidebar = ({ isOpen, toggle }) => {
 							<NavLink to={item.link || '#'} className={({ isActive }) => `flex items-center justify-between gap-3 p-2 rounded transition-colors duration-200 ${isActive ? 'bg-[linear-gradient(90deg,#444F8A_0%,#505FAA_100%)] text-white' : 'bg-transparent text-[#2D2D2D] hover:bg-[#d5d6d8] hover:text-white'}`}>
 								<div className="flex justify-start gap-2">
 									<i className={`${item.icon} text-lg`} />
-									{isOpen && <span>{item.name}</span>}
+									{isOpen && <span>{`${item.name} text-sm`}</span>}
 								</div>
 								{item.submenu && isOpen && <i className="ri-arrow-down-s-line transition-transform duration-200" />}
 							</NavLink>
@@ -40,21 +40,21 @@ const Sidebar = ({ isOpen, toggle }) => {
 					))}
 				</section>
 				{isOpen && (
-					<div className="flex flex-col gap-2 mt-4">
+					<div className="flex flex-col gap-2 mt-3 mx-4">
 						<div className="flex flex-col justify-between items-start gap-2 rounded-[10px] p-2 bg-[linear-gradient(0deg,rgba(255,255,255,0.76)_0%,rgba(255,255,255,0.78)_100%)]">
-							<button className="flex justify-start gap-2 text-xl text-[#232323] p-2 cursor-pointer w-full hover:bg-[#F2F3F5]">
-								<i className="ri-questionnaire-line" />
-								<span>Help</span>
+							<button className="flex justify-start gap-2 text-sm text-[#232323] p-2 cursor-pointer w-full hover:bg-[#F2F3F5]">
+								<i className="ri-questionnaire-line text-xl" />
+								<span className='text-base'>Help</span>
 							</button>
-							<button className="flex justify-start gap-2 text-xl text-[#232323] p-2 cursor-pointer w-full hover:bg-[#F2F3F5]">
-								<i className="ri-settings-2-line" />
-								<span>Settings</span>
+							<button className="flex justify-start gap-2 text-sm text-[#232323] p-2 cursor-pointer w-full hover:bg-[#F2F3F5]">
+								<i className="ri-settings-2-line text-xl" />
+								<span className='text-base'>Settings</span>
 							</button>
 						</div>
 						<div className="flex flex-col justify-center items-start gap-2 rounded-[10px] p-2 bg-[linear-gradient(0deg,rgba(255,255,255,0.76)_0%,rgba(255,255,255,0.78)_100%)]">
-							<button className="flex justify-start gap-2 text-xl text-[#232323] p-2 cursor-pointer w-full hover:bg-[#F2F3F5]">
-								<i className="ri-logout-box-line" />
-								<span>Logout</span>
+							<button className="flex justify-start gap-2 text-sm text-[#232323] p-2 cursor-pointer w-full hover:bg-[#F2F3F5]">
+								<i className="ri-logout-box-line text-xl" />
+								<span className='text-base'>Logout</span>
 							</button>
 						</div>
 					</div>

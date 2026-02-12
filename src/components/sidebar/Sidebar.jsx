@@ -66,7 +66,7 @@ const Sidebar = ({ isOpen, toggle }) => {
 			<div className="flex items-center justify-between p-4 mb-14">
 				{isOpen && <span className="font-light text-lg text-[#232323]">Finbook Global</span>}
 				<button onClick={toggle} className="text-xl text-[#232323]">
-					<i className="ri-menu-line"></i>
+					<i className="ri-menu-line cursor-pointer"></i>
 				</button>
 			</div>
 

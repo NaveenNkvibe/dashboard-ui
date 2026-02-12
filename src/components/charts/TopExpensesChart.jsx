@@ -19,7 +19,7 @@ const TopExpensesChart = () => {
 
 				<div className="absolute inset-0 flex flex-col justify-start items-center mt-12">
 					<span className="text-sm text-[#2D2D2D]">Total Expenses</span>
-					<span className="text-4xl font-semibold text-[#232323]">${totalExpenses.toLocaleString()}</span>
+					<span className="text-2xl sm:text-4xl font-semibold text-[#232323]">${totalExpenses.toLocaleString()}</span>
 				</div>
 			</div>
 

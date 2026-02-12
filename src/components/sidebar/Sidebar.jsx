@@ -20,7 +20,7 @@ const Sidebar = ({ isOpen, toggle }) => {
 					{sidebarData.map((item) => (
 						<div key={item.name}>
 							<NavLink to={item.link || '#'} className={({ isActive }) => `flex items-center justify-between gap-3 p-2 rounded transition-colors duration-200 ${isActive ? 'bg-[linear-gradient(90deg,#444F8A_0%,#505FAA_100%)] text-white' : 'bg-transparent text-[#2D2D2D] hover:bg-[#d5d6d8] hover:text-white'}`}>
-								<div className="flex justify-start gap-2">
+								<div className="flex justify-start items-center gap-2">
 									<i className={`${item.icon} text-lg`} />
 									{isOpen && <span className="text-sm">{`${item.name}`}</span>}
 								</div>

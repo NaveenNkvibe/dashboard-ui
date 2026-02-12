@@ -44,17 +44,17 @@ const Sidebar = ({ isOpen, toggle }) => {
 						<div className="flex flex-col justify-between items-start gap-2 rounded-[10px] p-2 bg-[linear-gradient(0deg,rgba(255,255,255,0.76)_0%,rgba(255,255,255,0.78)_100%)]">
 							<button className="flex justify-start gap-2 text-sm text-[#232323] p-2 cursor-pointer w-full hover:bg-[#F2F3F5]">
 								<i className="ri-questionnaire-line text-xl" />
-								<span className='text-base'>Help</span>
+								<span className='text-sm'>Help</span>
 							</button>
 							<button className="flex justify-start gap-2 text-sm text-[#232323] p-2 cursor-pointer w-full hover:bg-[#F2F3F5]">
 								<i className="ri-settings-2-line text-xl" />
-								<span className='text-base'>Settings</span>
+								<span className='text-sm'>Settings</span>
 							</button>
 						</div>
 						<div className="flex flex-col justify-center items-start gap-2 rounded-[10px] p-2 bg-[linear-gradient(0deg,rgba(255,255,255,0.76)_0%,rgba(255,255,255,0.78)_100%)]">
 							<button className="flex justify-start gap-2 text-sm text-[#232323] p-2 cursor-pointer w-full hover:bg-[#F2F3F5]">
 								<i className="ri-logout-box-line text-xl" />
-								<span className='text-base'>Logout</span>
+								<span className='text-sm'>Logout</span>
 							</button>
 						</div>
 					</div>
